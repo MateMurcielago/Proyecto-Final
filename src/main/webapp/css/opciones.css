@@ -18,7 +18,6 @@ body {
     justify-content: center;     /* centra horizontalmente el mensaje */
     align-items: center;         /* centra verticalmente el mensaje */
     color: white;                /* color del texto */
-    text-shadow: 2px 2px 4px rgba(0,0,0,0.7); /* sombra para resaltar el texto */
 }
 
 .config-container {
@@ -108,7 +107,6 @@ input:checked + .slider:before {
 
 .config-container h1 {
     color: #dd2222;
-    font-size: 3em;
     text-align: center;
     margin-top: 8px;
 }
@@ -165,7 +163,7 @@ input:checked + .slider:before {
     padding: 12px 20px;
     text-decoration: none;
     font-size: 18px;
-    color: white;
+    color: var(--rojo);
     display: block;
     transition: 0.2s;
 }

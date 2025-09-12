@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-configuration PUBLIC
+        "-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+        "http://hibernate.sourceforge.net/hibernate-configuration-3.0.dtd">
+
+<hibernate-configuration>
+    <session-factory>
+        <!-- Datos de conexión -->
+        <property name="hibernate.connection.driver_class">com.mysql.cj.jdbc.Driver</property>
+        <property name="hibernate.connection.url">jdbc:mysql://root@127.0.0.1:3306/proyecto_final</property>
+        <property name="hibernate.connection.username">root</property>
+        <property name="hibernate.connection.password">Ezequiel98</property>
+
+        <!-- Dialecto -->
+        <property name="hibernate.dialect">org.hibernate.dialect.MySQL8Dialect</property>
+
+        <!-- Mostrar SQL en consola -->
+        <property name="hibernate.show_sql">true</property>
+
+        <!-- Actualiza el esquema automáticamente -->
+        <property name="hibernate.hbm2ddl.auto">update</property>
+
+        <!-- Entidades -->
+        <mapping class="rdt.arrieta.casa.clases.tipo_articulo"/>
+        <mapping class="rdt.arrieta.casa.clases.marca_articulo"/>
+        <mapping class="rdt.arrieta.casa.clases.modelo_articulo"/>
+        <mapping class="rdt.arrieta.casa.clases.tipo_electronico"/>
+        <mapping class="rdt.arrieta.casa.clases.nombre_electronico"/>
+        <mapping class="rdt.arrieta.casa.clases.codigo_electronico"/>
+        <mapping class="rdt.arrieta.casa.clases.Inventario"/>
+        <mapping class="rdt.arrieta.casa.clases.Inventario_electronico"/>
+        <mapping class="rdt.arrieta.casa.clases.tipo_pantalla"/>
+        <mapping class="rdt.arrieta.casa.clases.tamanio_pantalla"/>
+    </session-factory>
+</hibernate-configuration>

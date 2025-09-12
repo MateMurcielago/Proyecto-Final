@@ -57,6 +57,7 @@ h1 {
     transition: 0.3s;
     padding-top: 60px;
     z-index: 1000;
+    flex-direction: column;
 }
 
 /* texto del menú */
@@ -64,7 +65,7 @@ h1 {
     padding: 12px 20px;
     text-decoration: none;
     font-size: 18px;
-    color: white;
+    color: var(--rojo);
     display: block;
     transition: 0.2s;
 }
@@ -81,6 +82,7 @@ h1 {
 
 .sidebar a:hover {
     background-color: var(--rojo-resaltado);
+    cursor: pointer;
 }
 
 /* Cuando el sidebar está activo */

@@ -1,0 +1,103 @@
+:root {
+    --rojo: #dd2222;
+    --rojo-resaltado: #d44c4c;
+    --negro-texto: #474747;
+    --naranja: #ff7300;
+}
+
+/* Fondo */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    height: 100vh;
+    background-image: url('../images/fondo.jpg'); /* ruta relativa al CSS */
+    background-size: cover;     /* cubre toda la pantalla */
+    background-position: center; /* centra la imagen */
+    display: flex;
+    justify-content: center;     /* centra horizontalmente el mensaje */
+    align-items: center;         /* centra verticalmente el mensaje */
+    color: white;                /* color del texto */
+}
+
+.container {
+    width: 100px auto;
+    margin: 20px auto;
+    padding: 20px;
+    background: black;
+    border-radius: 12px;
+    background: rgba(0,0,0,0.7);
+    text-align: center;
+    font-family: Arial, sans-serif;
+}
+.form-row {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 12px 0;
+}
+
+.form-row label {
+    margin-right: 10px;
+    min-width: 50px
+    font-weight: bold;
+}
+
+.form-row input {
+    padding: 12px;
+    margin-right: 10px;
+    min-width: 5px
+    font-weight: bold;
+    background-color: var(--negro-texto);
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    color: white;
+}
+
+.container h1 {
+    color: #dd2222;
+    text-align: center;
+    margin-top: 8px;
+}
+
+.container button {
+    width: 100%;
+    padding: 12px;
+    margin-top: 15px;
+    border: none;
+    border-radius: 8px;
+    background-color: var(--rojo);
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+select {
+    width: 200px;
+    padding: 8px 12px;
+    border: 2px solid var(--rojo);   /* borde verde */
+    border-radius: 6px;
+    background-color: var(--negro-texto);
+    font-size: 14px;
+    color: white;
+    appearance: none;    /* quita la flechita nativa en la mayoría de navegadores */
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    cursor: pointer;
+}
+
+select:focus {
+    border-color: var(--rojo-resaltado);       /* verde más oscuro */
+    box-shadow: 0 0 5px rgba(46, 125, 50, 0.5);
+    outline: none;
+}
+
+select option {
+    padding: 10px;
+    background-color: var(--negro-texto);
+    color: white;
+}
+
+select option:hover {
+    background-color: var(--rojo-resaltado);
+}

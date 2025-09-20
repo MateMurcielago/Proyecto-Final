@@ -19,16 +19,13 @@
             <t>Menú</t>
             <a href="index.jsp">Inicio</a>
             <a href="opciones">Opciones</a>
-            <t></t>
+            <t>Ver</t>
+            <a href="buscarClientes">Clientes</a>
             <t>Nuevo...</t>
-            <a href="crearTipoArticulo.jsp">Tipo de Artículo</a>
-            <a href="crearMarcaArticulo">Marca de Artículo</a>
-            <a href="seleccionarTipoArticulo">Modelo de Artículo</a>
-            <a href="crearTipoElectronico.jsp">Tipo de Electrónico</a>
-            <a href="crearNombreElectronico">Nombre de Electrónico</a>
-            <a href="seleccionarTipoElectronico">Código de Electrónico</a>
-            <a href="crearTipoPantalla.jsp">Tipo de Pantalla</a>
-            <a href="crearTamanioPantalla.jsp">Tamaño de Pantalla</a>
+            <a href="menuArticulo.jsp">Artículo...</a>
+            <a href="menuElectronico.jsp">Repuesto Electrónico...</a>
+            <a href="menuPantalla.jsp">Repuesto de Pantalla...</a>
+            <a href="crearTamanioLed.jsp">Tamaño de LED</a>
         </div>
 
         <h1>¡Bienvenido a mi intento de aplicación web!</h1>

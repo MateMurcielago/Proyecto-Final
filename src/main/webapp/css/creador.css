@@ -1,0 +1,72 @@
+:root {
+    --rojo: #dd2222;
+    --rojo-resaltado: #d44c4c;
+    --negro-texto: #474747;
+    --naranja: #ff7300;
+}
+
+/* Fondo */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    height: 100vh;
+    background-image: url('../images/fondo.jpg');
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+}
+
+.container {
+    width: 100px auto;
+    margin: 20px auto;
+    padding: 20px;
+    background: black;
+    border-radius: 12px;
+    background: rgba(0,0,0,0.7);
+    text-align: center;
+    font-family: Arial, sans-serif;
+}
+.form-row {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 12px 0;
+}
+
+.form-row input {
+    padding: 12px;
+    margin-right: 10px;
+    margin-left: 10px;
+    min-width: 5px
+    font-weight: bold;
+    background-color: var(--negro-texto);
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    color: white;
+}
+
+.container h1 {
+    color: #dd2222;
+    text-align: center;
+    margin-top: 8px;
+}
+
+.container button {
+    width: 100%;
+    padding: 12px;
+    margin-top: 15px;
+    border: none;
+    border-radius: 8px;
+    background-color: var(--rojo);
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.container button:hover {
+    background-color: var(--rojo-resaltado);
+}

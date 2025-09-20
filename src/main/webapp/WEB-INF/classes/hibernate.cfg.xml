@@ -31,5 +31,15 @@
         <mapping class="rdt.arrieta.casa.clases.Inventario_electronico"/>
         <mapping class="rdt.arrieta.casa.clases.tipo_pantalla"/>
         <mapping class="rdt.arrieta.casa.clases.tamanio_pantalla"/>
+        <mapping class="rdt.arrieta.casa.clases.codigo_pantalla"/>
+        <mapping class="rdt.arrieta.casa.clases.Inventario_pantalla"/>
+        <mapping class="rdt.arrieta.casa.clases.tamanio_led"/>
+        <mapping class="rdt.arrieta.casa.clases.Inventario_led"/>
+        <mapping class="rdt.arrieta.casa.clases.Cliente"/>
+        <mapping class="rdt.arrieta.casa.clases.intermedias.ArticuloCliente"/>
+        <mapping class="rdt.arrieta.casa.clases.Reparacion"/>
+        <mapping class="rdt.arrieta.casa.clases.intermedias.ReparacionElectronico"/>
+        <mapping class="rdt.arrieta.casa.clases.intermedias.ReparacionPantalla"/>
+        <mapping class="rdt.arrieta.casa.clases.intermedias.ReparacionLed"/>
     </session-factory>
 </hibernate-configuration>

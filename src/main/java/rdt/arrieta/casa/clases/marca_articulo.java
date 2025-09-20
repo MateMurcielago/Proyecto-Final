@@ -21,7 +21,7 @@ public class marca_articulo {
         return id;
     }
 
-    public tipo_articulo geTipo() {
+    public tipo_articulo getTipo() {
         return tipo;
     }
 

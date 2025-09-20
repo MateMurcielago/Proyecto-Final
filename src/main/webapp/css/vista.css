@@ -1,0 +1,206 @@
+:root {
+    --rojo: #dd2222;
+    --rojo-resaltado: #d44c4c;
+    --negro-texto: #474747;
+    --naranja: #ff7300;
+    --gris: #616161;
+}
+
+/* Fondo */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    height: 100vh;
+    background-image: url('../images/fondo.jpg');
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.7);
+}
+
+.container {
+    width: 90%
+    max-width: 900px;
+    margin: 40px auto;
+    padding: 0 20px;
+    border-radius: 12px;
+    background: rgba(0,0,0,0.7);
+    text-align: center;
+    font-family: Arial, sans-serif;
+}
+
+h1 {
+   color: var(--rojo);
+}
+
+.acciones {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+    gap: 10px;
+}
+
+.item-header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.item-header h2 {
+   color: var(--rojo);
+}
+
+item-list {
+    margin-top: 10px;
+}
+
+.item-card {
+    background: black;
+    border-radius: 12px;
+    padding: 15px;
+    margin: 10px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: transform 0.2s;
+    min-width: 320px;
+}
+
+.item-card:hover {
+    transform: scale(1.02);
+}
+
+.item-info {
+    display: flex;
+    flex-direction: column;
+}
+
+.item-info strong {
+    font-size: 1.1em;
+    color: white;
+}
+
+.item-actions a{
+    text-decoration: none;
+    padding: 8px 12px;
+    border-radius: 8px;
+    background: var(--rojo);
+    color: white;
+    font-size: 0.9em;
+}
+
+.item-actions a:hover {
+    background: var(--rojo-resaltado);
+}
+
+.btn{
+    align-items: center;
+    margin: 20px auto;
+    padding: 12px 20px;
+    background: var(--rojo);
+    color: white;
+    font-weight: bold;
+    border: none;
+    border-radius: 8px;
+    text-align: center;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.btn.eliminar{
+    align-items: center;
+    width: 90px;
+    font-weight: bold;
+    margin: 20px auto;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.btn:hover {
+    background: -var(--rojo-resaltado);
+}
+
+.btn-add{
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    margin: 20px auto;
+    padding: 12px 12px;
+    background: var(--rojo);
+    color: white;
+    font-weight: bold;
+    border: none;
+    border-radius: 8px;
+    text-align: center;
+    cursor: pointer;
+    text-decoration: none;
+    width: 8px;
+    height: 10px;
+}
+
+.btn-container a:hover {
+    background: -var(--rojo-resaltado);
+}
+
+.acciones btn-eliminar {
+    align-items: center;
+    width: 80px;
+    margin: 20px auto;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 8px;
+    background-color: var(--rojo);
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    text-align: center;
+    font-weight: bold;
+}
+
+.item-header button {
+  margin: 0;              /* asegura que no tenga espacio raro */
+  line-height: 1;         /* evita que el símbolo + se vea descentrado */
+}
+
+.btn-container {
+    /*min-width: 2px;*/
+    display: flex;
+    justify-content: center;
+    align-items: center;            /* centra el botón dentro de su contenedor */
+}
+
+.btn-container button{
+    font-weight: bold;
+    padding: 12px 12px;
+    margin-right: 10px;
+    margin-left: 10px;
+    border: none;
+    border-radius: 8px;
+    background-color: var(--rojo);
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    margin: 20px auto;
+}
+
+.btn-container button:hover {
+    background-color: var(--rojo-resaltado);
+}
+
+.btn-container-2 {
+    /*min-width: 2px;*/
+    display: flex;
+    justify-content: center;
+    align-items: left;            /* centra el botón dentro de su contenedor */
+}
+
+.vacio {
+    color: var(--gris);
+}

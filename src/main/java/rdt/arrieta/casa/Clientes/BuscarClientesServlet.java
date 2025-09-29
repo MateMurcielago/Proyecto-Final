@@ -50,8 +50,6 @@ public class BuscarClientesServlet extends HttpServlet {
 
         session.close();
 
-        System.out.println(clientes.getFirst().getNombre());
-
         request.setAttribute("clientes", clientes);
         request.getRequestDispatcher("buscarClientes.jsp").forward(request, response);
     }

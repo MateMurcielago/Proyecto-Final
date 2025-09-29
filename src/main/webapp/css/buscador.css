@@ -3,6 +3,7 @@
     --rojo-resaltado: #d44c4c;
     --negro-texto: #474747;
     --naranja: #ff7300;
+    --gris: #616161;
 }
 
 /* Fondo */
@@ -87,6 +88,20 @@ h1 {
     transform: scale(1.02);
 }
 
+.item-card-2 {
+    background: black;
+    border-radius: 12px;
+    padding: 15px 15px 3px;
+    margin: 10px 0;
+    justify-content: space-between;
+    align-items: center;
+    transition: transform 0.2s;
+}
+
+.item-card-2:hover {
+    transform: scale(1.02);
+}
+
 .item-info {
     display: flex;
     flex-direction: column;
@@ -131,4 +146,83 @@ h1 {
 
 .btn-nuevo:hover {
     background: -var(--rojo-resaltado);
+}
+
+.search-row {
+    display: flex;
+    gap: 5px;
+    align-items: center;
+}
+
+.search-row input[type="text"] {
+    width: 100%;
+    padding: 12px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    box-sizing: border-box;
+    background-color: var(--negro-texto);
+    color: white;
+}
+
+.search-row select {
+    width: 100px;
+    padding: 8px 12px;
+    border: 2px solid var(--rojo);   /* borde verde */
+    border-radius: 6px;
+    background-color: var(--negro-texto);
+    font-size: 14px;
+    color: white;
+    appearance: none;    /* quita la flechita nativa en la mayoría de navegadores */
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    cursor: pointer;
+}
+
+.search-row button {
+    padding: 12px;
+    margin: 10px 0;
+    border: none;
+    background: var(--rojo);
+    color: white;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.search-row button:hover {
+    background: var(--rojo-resaltado);
+}
+
+.card-header, .card-body {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: -2px;
+}
+
+.card-header-2, .card-body-2 {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 5px;
+}
+
+.vacio {
+    color: var(--gris);
+}
+
+.container button {
+    width: 100%;
+    padding: 12px;
+    margin-top: 15px;
+    border: none;
+    border-radius: 8px;
+    background-color: var(--rojo);
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.container button:hover {
+    background: var(--rojo-resaltado);
 }

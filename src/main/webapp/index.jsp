@@ -19,8 +19,10 @@
             <t>Menú</t>
             <a href="index.jsp">Inicio</a>
             <a href="opciones">Opciones</a>
-            <t>Ver</t>
+            <t>Ver...</t>
             <a href="buscarClientes">Clientes</a>
+            <a href="buscarArticulos">Artículos</a>
+            <a href="buscarReparaciones?estado=TODO">Reparaciones</a>
             <t>Nuevo...</t>
             <a href="menuArticulo.jsp">Artículo...</a>
             <a href="menuElectronico.jsp">Repuesto Electrónico...</a>

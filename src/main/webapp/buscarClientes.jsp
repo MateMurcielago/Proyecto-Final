@@ -45,6 +45,14 @@
                 }
             %>
 
+            <%
+                if(clientes.isEmpty()) {
+            %>
+                    <p class="vacio">No hay clientes para mostrar</p>
+            <%
+                }
+            %>
+
             <a href="crearCliente.jsp" class="btn-nuevo">Nuevo Cliente...</a>
         </div>
     </body>

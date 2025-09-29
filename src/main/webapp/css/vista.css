@@ -15,7 +15,8 @@ body {
     background-image: url('../images/fondo.jpg');
     background-size: cover;
     background-position: center;
-    display: flex;
+    background-attachment: fixed; /* para que no se repita verticalmente */
+    display: grid; /* con flex el título queda afuera de la pantalla por arriba */
     justify-content: center;
     align-items: center;
     color: white;
@@ -48,6 +49,8 @@ h1 {
     display: flex;
     align-items: center;
     justify-content: center;
+    margin: -20px 0px -20px 0px;
+    gap: 5px;
 }
 
 .item-header h2 {
@@ -203,4 +206,16 @@ item-list {
 
 .vacio {
     color: var(--gris);
+}
+
+.fecha-row {
+    display: flex;
+    gap: 5px;
+    margin: -15px 0px -15px 0px;
+    justify-content: center;
+}
+
+.descripcion {
+    max-width: 600px;
+    word-wrap: break-word;
 }

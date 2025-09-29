@@ -33,6 +33,10 @@ public class codigo_pantalla {
         return tipo;
     }
 
+    public String getCodigo() {
+        return codigo;
+    }
+
     public void setId(Long id) {
         this.id = id;
     }

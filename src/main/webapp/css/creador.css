@@ -49,6 +49,26 @@ body {
     color: white;
 }
 
+.form-row input[type="date"] {
+    padding: 12px;
+    margin-right: 10px;
+    margin-left: 10px;
+    min-width: 5px
+    font-weight: bold;
+    background-color: var(--negro-texto);
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    color: white;
+}
+
+.form-row input[type="checkbox"] {
+    accent-color: var(--rojo);
+    width: 18px;
+    height: 18px;
+    cursor: pointer;
+    background: var(--negro-texto);
+}
+
 .container h1 {
     color: #dd2222;
     text-align: center;
@@ -69,4 +89,16 @@ body {
 
 .container button:hover {
     background-color: var(--rojo-resaltado);
+}
+
+textarea {
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    width: 100%;
+    resize: vertical;
+    min-height: 80px;
+    box-sizing: border-box;
+    background-color: var(--negro-texto);
+    color: white;
 }

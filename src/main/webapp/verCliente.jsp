@@ -47,7 +47,7 @@
                                 </div>
 
                                 <div class="item-actions">
-                                    <a href="verArticulo?=id=<%=ac.getId()%>">Ver Más</a>
+                                    <a href="verArticulo?clienteId=<%=cliente.getId()%>&articuloId=<%=ac.getArticulo().getId()%>">Ver Más</a>
                                 </div>
                             </div>
                 <%

@@ -23,6 +23,7 @@
             <a href="buscarClientes">Clientes</a>
             <a href="buscarArticulos">Artículos</a>
             <a href="buscarReparaciones?estado=TODO">Reparaciones</a>
+            <a href="menuInventario.jsp">Inventario</a>
             <t>Nuevo...</t>
             <a href="menuArticulo.jsp">Artículo...</a>
             <a href="menuElectronico.jsp">Repuesto Electrónico...</a>

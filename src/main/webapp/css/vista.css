@@ -174,7 +174,7 @@ item-list {
 
 .btn-container {
     /*min-width: 2px;*/
-    display: flex;
+    /*display: flex;*/
     justify-content: center;
     align-items: center;            /* centra el botón dentro de su contenedor */
 }

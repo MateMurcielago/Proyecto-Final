@@ -34,6 +34,10 @@
                 </div>
 
                 <div class="form-row">
+                    <input type="text" id="ciudad" name="ciudad" placeholder="Ciudad..." value="<%= cliente.getCiudad() %>" required>
+                </div>
+
+                <div class="form-row">
                     <input type="number" id="numero_telefono" name="numero_telefono" placeholder="Teléfono..."value="<%= cliente.getNumero_telefono() %>"  required>
                 </div>
 

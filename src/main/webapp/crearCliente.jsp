@@ -29,6 +29,10 @@
                 </div>
 
                 <div class="form-row">
+                    <input type="text" id="ciudad" name="ciudad" placeholder="Ciudad..." value="R. del Tala" required>
+                </div>
+
+                <div class="form-row">
                     <input type="number" id="numero_telefono" name="numero_telefono" placeholder="Teléfono..." required>
                 </div>
 

@@ -27,7 +27,7 @@
             <h1><%= cliente.getApellido() %> <%= cliente.getNombre() %></h1>
 
             <p><strong>Número de teléfono:</strong> <%= car %>-<%= num %></h1>
-            <p><strong>Dirección:</strong> <%= cliente.getCalle() %> <%= cliente.getNumero_casa() %></h1>
+            <p><strong>Dirección:</strong> <%= cliente.getCalle() %> <%= cliente.getNumero_casa() %>, <%= cliente.getCiudad() %></h1>
 
             <div class="item-header">
                 <h2>Artículos </h2>

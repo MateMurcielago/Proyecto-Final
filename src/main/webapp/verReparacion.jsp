@@ -213,7 +213,7 @@
                 %>
             </div>
 
-            <p><strong>Mano de Obra:</strong> <%=reparacion.getHoras_mano_obra()%>Hs - <strong>Costo:</strong> $<%=reparacion.getCosto()%></p>
+            <p><strong>Mano de Obra:</strong> <%=reparacion.getHoras_mano_obra()%> Hs - <strong>Costo:</strong> $<%=reparacion.getCosto()%></p>
 
             <%
                 if(reparacion.getEstado().equals("FINALIZADO")) {
@@ -243,7 +243,7 @@
                 </div>
 
                 <div class="btn-container">
-                    <form action="actualizarEstado" method="get">
+                    <form action="actualizarEstadoReparacion" method="get">
                         <input type="hidden" name="clienteId" value="<%=cliente.getId()%>">
                         <input type="hidden" name="articuloId" value="<%=articulo.getId()%>">
                         <input type="hidden" name="reparacionId" value="<%=reparacion.getId()%>">
@@ -256,7 +256,7 @@
                                 onsubmit="return confirm('¿Estás seguro de eliminar esta reparación?');">
                         <input type="hidden" name="tipo" value="reparacion">
                         <input type="hidden" name="reparacionId" value="<%=reparacion.getId()%>">
-                        <button type="submit">Eliminar</button>
+                        <button type="submit"><i class="fa fa-exclamation-circle"></i> Eliminar</button>
                     </form>
                 </div>
             </div>

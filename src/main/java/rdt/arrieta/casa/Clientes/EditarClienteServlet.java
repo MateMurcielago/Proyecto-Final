@@ -41,6 +41,7 @@ public class EditarClienteServlet extends HttpServlet {
         Long numer_telefono = Long.parseLong(request.getParameter("numero_telefono"));
         String calle = request.getParameter("calle");
         String numero_casa = request.getParameter("numero_casa");
+        String ciudad = request.getParameter("ciudad");
 
         Session session = DBManager.getSessionFactory().openSession();
         session.beginTransaction();
@@ -51,6 +52,7 @@ public class EditarClienteServlet extends HttpServlet {
         c.setNumero_telefono(numer_telefono);
         c.setCalle(calle);
         c.setNumero_casa(numero_casa);
+        c.setCiudad(ciudad);
 
         session.getTransaction().commit();
         session.close();

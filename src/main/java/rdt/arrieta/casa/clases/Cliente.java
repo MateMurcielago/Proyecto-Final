@@ -29,6 +29,9 @@ public class Cliente {
     @Column
     private String numero_casa;
 
+    @Column
+    private String ciudad;
+
     @OneToMany(mappedBy = "cliente", cascade = CascadeType.ALL, orphanRemoval = true)
     private List<ArticuloCliente> articulos = new ArrayList<>();
 
@@ -54,6 +57,10 @@ public class Cliente {
 
     public String getNumero_casa() {
         return numero_casa;
+    }
+
+    public String getCiudad() {
+        return ciudad;
     }
 
     public List<ArticuloCliente> getArticulos() {
@@ -82,6 +89,10 @@ public class Cliente {
 
     public void setNumero_casa(String numero_casa) {
         this.numero_casa = numero_casa;
+    }
+
+    public void setCiudad(String ciudad) {
+        this.ciudad = ciudad;
     }
 
     public void setArticulos(List<ArticuloCliente> articulos) {

@@ -102,3 +102,29 @@ textarea {
     background-color: var(--negro-texto);
     color: white;
 }
+
+select {
+    width: 200px;
+    padding: 8px 12px;
+    border: 2px solid var(--rojo);   /* borde verde */
+    border-radius: 6px;
+    background-color: var(--negro-texto);
+    font-size: 14px;
+    color: white;
+    appearance: none;    /* quita la flechita nativa en la mayoría de navegadores */
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    cursor: pointer;
+}
+
+select:focus {
+    border-color: var(--rojo-resaltado);       /* verde más oscuro */
+    box-shadow: 0 0 5px rgba(46, 125, 50, 0.5);
+    outline: none;
+}
+
+select option {
+    padding: 10px;
+    background-color: var(--negro-texto);
+    color: white;
+}

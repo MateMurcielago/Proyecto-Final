@@ -22,6 +22,7 @@ public class CrearClienteServlet extends HttpServlet {
         Long numero_telefono = Long.parseLong(request.getParameter("numero_telefono"));
         String calle = request.getParameter("calle");
         String numero_casa = request.getParameter("numero_casa");
+        String ciudad = request.getParameter("ciudad");
 
         Cliente c = new Cliente();
         c.setNombre(nombre);
@@ -29,6 +30,7 @@ public class CrearClienteServlet extends HttpServlet {
         c.setNumero_telefono(numero_telefono);
         c.setCalle(calle);
         c.setNumero_casa(numero_casa);
+        c.setCiudad(ciudad);
         c.setArticulos(new ArrayList<>());
 
         try(Session session = DBManager.getSessionFactory().openSession()) {

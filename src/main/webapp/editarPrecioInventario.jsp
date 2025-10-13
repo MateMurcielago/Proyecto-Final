@@ -11,7 +11,7 @@
 <html>
     <head>
         <title>Editar Precio</title>
-        <link rel="stylesheet" href="css/buscador.css">
+        <link rel="stylesheet" href="css/creador.css">
     </head>
     <body>
         <div class="container">

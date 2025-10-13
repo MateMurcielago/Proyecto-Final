@@ -21,6 +21,9 @@ public class ReparacionLed {
     @JoinColumn(name = "id_tamanio_led")
     private tamanio_led led;
 
+    @Column
+    private int cantidad;
+
     public ReparacionLed() {}
 
     public ReparacionLed(Reparacion reparacion, tamanio_led led) {
@@ -41,6 +44,10 @@ public class ReparacionLed {
         return led;
     }
 
+    public int getCantidad() {
+        return cantidad;
+    }
+
     public void setId(ReparacionLedId id) {
         this.id = id;
     }
@@ -51,5 +58,9 @@ public class ReparacionLed {
 
     public void setLed(tamanio_led led) {
         this.led = led;
+    }
+
+    public void setCantidad(int cantidad) {
+        this.cantidad = cantidad;
     }
 }

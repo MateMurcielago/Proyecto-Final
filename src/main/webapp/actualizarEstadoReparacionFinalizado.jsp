@@ -9,7 +9,6 @@
         return;
     }
 
-    int horas = Integer.parseInt((String) request.getAttribute("horas"));
     String hoy = new SimpleDateFormat("yyyy-MM-dd").format(new Date());
 %>
 
@@ -35,7 +34,7 @@
                 <textarea class="form-control" id="trabajo_realizado" name="trabajo_realizado" rows="5" placeholder="Trabajo realizado..."></textarea>
 
                 <div class="form-row">
-                    <input type="number" id="horas_mano_obra" name="horas_mano_obra" placeholder="Mano de obra..." value="<%=horas%>">
+                    <input type="number" id="horas_mano_obra" name="horas_mano_obra" placeholder="Mano de obra..." value="<%=request.getAttribute("horas")%>">
                     <p>Hs</p>
 
                     <input type="text" id="garantia" name="garantia" placeholder="Garantía...">

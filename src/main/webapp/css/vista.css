@@ -219,3 +219,21 @@ item-list {
     max-width: 600px;
     word-wrap: break-word;
 }
+
+.btn-container-3 {
+    display: flex;
+}
+
+.btn-container-3 button {
+    font-weight: bold;
+    padding: 0;
+    border: none;
+    background: none;
+    color: white;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+.btn-container-3 button:hover {
+    color: #0fd94f;
+}

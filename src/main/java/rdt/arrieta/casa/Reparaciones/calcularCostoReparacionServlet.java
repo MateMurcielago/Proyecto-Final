@@ -10,7 +10,6 @@ import java.util.List;
 import java.util.Properties;
 
 import rdt.arrieta.casa.clases.Reparacion;
-import rdt.arrieta.casa.clases.embebidas.ArticuloClienteId;
 import rdt.arrieta.casa.clases.intermedias.ArticuloCliente;
 import rdt.arrieta.casa.clases.Cliente;
 import rdt.arrieta.casa.clases.Inventario_electronico;
@@ -20,41 +19,13 @@ import rdt.arrieta.casa.db.DBManager;
 import org.hibernate.Session;
 import org.hibernate.query.Query;
 
-@WebServlet("/actualizarEstadoReparacionFinalizado")
-public class ActualizarEstadoReparacionFinalizadoServlet extends HttpServlet {
-    @Override
-    protected void doGet(HttpServletRequest request, HttpServletResponse response)
-            throws ServletException, IOException{
-        Long reparacionId = Long.parseLong(request.getParameter("reparacionId"));
-
-        Long clienteId = Long.parseLong(request.getParameter("clienteId"));
-        Long articuloId = Long.parseLong(request.getParameter("articuloId"));
-
-        Session session = DBManager.getSessionFactory().openSession();
-
-        int horas_mano_obra = session.get(Reparacion.class, reparacionId).getHoras_mano_obra();
-
-        session.close();
-
-        request.setAttribute("reparacionId", reparacionId);
-        request.setAttribute("clienteId", clienteId);
-        request.setAttribute("articuloId", articuloId);
-
-        request.setAttribute("horas", horas_mano_obra);
-
-        request.getRequestDispatcher("actualizarEstadoReparacionFinalizado.jsp").forward(request, response);
-    }
-
+@WebServlet("/calcularCostoReparacion")
+public class calcularCostoReparacionServlet extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException {
         Long reparacionId = Long.parseLong(request.getParameter("reparacionId"));
         Long clienteId = Long.parseLong(request.getParameter("clienteId"));
         Long articuloId = Long.parseLong(request.getParameter("articuloId"));
-
-        String fechaFinStr = request.getParameter("fechaFin");
-        String trabajo_realizado = request.getParameter("trabajo_realizado");
-        int horas_mano_obra = Integer.parseInt(request.getParameter("horas_mano_obra"));
-        String garantia = request.getParameter("garantia");
 
         Session session = DBManager.getSessionFactory().openSession();
         session.beginTransaction();
@@ -71,13 +42,6 @@ public class ActualizarEstadoReparacionFinalizadoServlet extends HttpServlet {
         }
 
         String valorStr = props.getProperty("valorHora", "0.0");
-        boolean avisar = "true".equals(props.getProperty("avisar", "false"));
-
-        r.setEstado("FINALIZADO");
-        r.setFecha_fin(LocalDate.parse(fechaFinStr));
-        r.setTrabajo_realizado(trabajo_realizado);
-        r.setHoras_mano_obra(horas_mano_obra);
-        r.setGarantia(garantia);
 
         Double costo = Double.parseDouble(valorStr) * r.getHoras_mano_obra();
 

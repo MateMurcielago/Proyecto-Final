@@ -21,6 +21,9 @@ public class ReparacionElectronico {
     @JoinColumn(name = "id_codigo_electronico")
     private codigo_electronico electronico;
 
+    @Column
+    private int cantidad;
+
     public ReparacionElectronico() {}
 
     public ReparacionElectronico(Reparacion reparacion, codigo_electronico electronico) {
@@ -41,6 +44,10 @@ public class ReparacionElectronico {
         return electronico;
     }
 
+    public int getCantidad() {
+        return cantidad;
+    }
+
     public void setId(ReparacionElectronicoId id) {
         this.id = id;
     }
@@ -51,5 +58,9 @@ public class ReparacionElectronico {
 
     public void setElectronico(codigo_electronico electronico) {
         this.electronico = electronico;
+    }
+
+    public void setCantidad(int cantidad) {
+        this.cantidad = cantidad;
     }
 }

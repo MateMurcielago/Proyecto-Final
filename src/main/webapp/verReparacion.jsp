@@ -27,13 +27,25 @@
     <head>
         <title>Ver Reparación</title>
         <link rel="stylesheet" href="css/vista.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     </head>
     <body>
         <div class="container">
             <h1>Reparación <%=reparacion.getCodigo()%></h1>
 
             <p><%=articulo.getMarca().getTipo().getTipo()%> <%=articulo.getMarca().getMarca()%> <%=articulo.getModelo()%></p>
-            <p><strong>De: </strong><%=cliente.getApellido()%> <%=cliente.getNombre()%></p>
+            <div class="fecha-row">
+                <p><strong>De: </strong><%=cliente.getApellido()%> <%=cliente.getNombre()%></p>
+                <%
+                    if(reparacion.getEstado().equals("FINALIZADO")) {
+                %>
+                        <div class="btn-container-3">
+                            <button type="button" onclick="window.open('https://wa.me/<%=cliente.getNumero_telefono()%>?text=Su <%=articulo.getMarca().getTipo().getTipo()%> está reparado. Puede pasar por el local a retirarlo.', '_blank')"><i class="fa-brands fa-whatsapp" aria-hidden="true"></i></button>
+                        </div>
+                <%
+                    }
+                %>
+            </div>
 
             <div class="fecha-row">
                 <p><strong>Ingreso: </strong><%=reparacion.getFecha_ingreso().getDayOfMonth()%>/<%=reparacion.getFecha_ingreso().getMonthValue()%>/<%=reparacion.getFecha_ingreso().getYear()%> </p>
@@ -117,7 +129,7 @@
             </div>
 
             <p><strong>Desperfecto</strong></p>
-            <div class="descripción">
+            <div class="descripcion">
                 <p><%=reparacion.getDesperfecto()%></p>
             </div>
 
@@ -125,7 +137,7 @@
                 if(reparacion.getEstado().equals("FINALIZADO")) {
             %>
                     <p><strong>Trabajo realizado</strong></p>
-                    <div class="descripción">
+                    <div class="descripcion">
                         <p><%=reparacion.getTrabajo_realizado()%></p>
                     </div>
             <%
@@ -135,7 +147,7 @@
             <div class="item-header">
                 <h2>Repuestos electrónicos</h2>
                 <div class="btn-container">
-                    <a href="agregarElectronicoTipo?clienteId=<%=cliente.getId()%>&articuloId=<%=articulo.getId()%>" class="btn-add">+</a>
+                    <a href="agregarElectronicoTipo?clienteId=<%=cliente.getId()%>&articuloId=<%=articulo.getId()%>&reparacionId=<%=reparacion.getId()%>" class="btn-add">+</a>
                 </div>
             </div>
 
@@ -144,9 +156,13 @@
                     if(electronicos != null && !electronicos.isEmpty()) {
                         for(ReparacionElectronico e : electronicos) {
                 %>
-                            <div class:"item-card">
+                            <div class="item-card">
                                 <div class="item-info">
-                                    <strong><%=e.getElectronico().getNombre().getTipo().getTipo()%> <%=e.getElectronico().getNombre().getNombre()%> <%=e.getElectronico().getCodigo()%></strong>
+                                    <strong><%=e.getElectronico().getNombre().getTipo().getTipo()%> <%=e.getElectronico().getNombre().getNombre()%> <%=e.getElectronico().getCodigo()%> (<%=e.getCantidad()%>)</strong>
+                                </div>
+
+                                <div class="item-actions">
+                                    <a href="editarCantidadRepuesto?tipo=electronico&clienteId=<%=cliente.getId()%>&articuloId=<%=articulo.getId()%>&reparacionId=<%=reparacion.getId()%>&repuestoId=<%=e.getElectronico().getId()%>">+</a>
                                 </div>
                             </div>
                 <%
@@ -162,7 +178,7 @@
             <div class="item-header">
                 <h2>Repuestos de pantalla</h2>
                 <div class="btn-container">
-                    <a href="agregarPantallaTamanio?clienteId=<%=cliente.getId()%>&articuloId=<%=articulo.getId()%>" class="btn-add">+</a>
+                    <a href="agregarPantallaTamanio?clienteId=<%=cliente.getId()%>&articuloId=<%=articulo.getId()%>&reparacionId=<%=reparacion.getId()%>" class="btn-add">+</a>
                 </div>
             </div>
 
@@ -173,7 +189,7 @@
                 %>
                             <div class="item-card">
                                 <div class="item-info">
-                                    <strong><%=p.getPantalla().getTamanio().getTamanio()%> <%=p.getPantalla().getCodigo()%></strong>
+                                    <strong>(<%=p.getPantalla().getTipo().getTipo()%>) <%=p.getPantalla().getTamanio().getTamanio()%>'' <%=p.getPantalla().getCodigo()%></strong>
                                 </div>
                             </div>
                 <%
@@ -189,7 +205,7 @@
             <div class="item-header">
                 <h2>Repuestos de LEDs</h2>
                 <div class="btn-container">
-                    <a href="agregarLed?clienteId=<%=cliente.getId()%>&articuloId=<%=articulo.getId()%>" class="btn-add">+</a>
+                    <a href="agregarLed?clienteId=<%=cliente.getId()%>&articuloId=<%=articulo.getId()%>&reparacionId=<%=reparacion.getId()%>" class="btn-add">+</a>
                 </div>
             </div>
 
@@ -200,7 +216,11 @@
                 %>
                             <div class="item-card">
                                 <div class="item-info">
-                                    <strong><%=l.getLed().getTamanio()%></strong>
+                                    <strong>Tamaño: <%=l.getLed().getTamanio()%> (<%=l.getCantidad()%>)</strong>
+                                </div>
+
+                                <div class="item-actions">
+                                    <a href="editarCantidadRepuesto?tipo=led&clienteId=<%=cliente.getId()%>&articuloId=<%=articulo.getId()%>&reparacionId=<%=reparacion.getId()%>&repuestoId=<%=l.getLed().getId()%>">+</a>
                                 </div>
                             </div>
                 <%
@@ -234,7 +254,7 @@
                 </div>
 
                 <div class="btn-container">
-                    <form action="actualizarEstado" method="get">
+                    <form action="actualizarEstadoReparacion" method="get">
                         <input type="hidden" name="clienteId" value="<%=cliente.getId()%>">
                         <input type="hidden" name="articuloId" value="<%=articulo.getId()%>">
                         <input type="hidden" name="reparacionId" value="<%=reparacion.getId()%>">
@@ -243,7 +263,7 @@
                 </div>
 
                 <div class="btn-container">
-                    <form action="actualizarEstadoReparacion" method="get">
+                    <form action="calcularCostoReparacion" method="post">
                         <input type="hidden" name="clienteId" value="<%=cliente.getId()%>">
                         <input type="hidden" name="articuloId" value="<%=articulo.getId()%>">
                         <input type="hidden" name="reparacionId" value="<%=reparacion.getId()%>">

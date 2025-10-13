@@ -16,9 +16,9 @@
         <!-- Menú desplegable -->
         <div class="menu-btn" onclick="toggleMenu()">☰</div>
         <div id="sidebar" class="sidebar">
-            <t>Menú</t>
             <a href="index.jsp">Inicio</a>
             <a href="opciones">Opciones</a>
+            <a href="buscarFallasComunes">Fallas Comúnes</a>
             <t>Ver...</t>
             <a href="buscarClientes">Clientes</a>
             <a href="buscarArticulos">Artículos</a>

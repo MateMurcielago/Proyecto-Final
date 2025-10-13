@@ -63,8 +63,8 @@
                                 </div>
 
                                 <div class="item-actions">
-                                    <a href="editarCantidadInventario?tipo=electronico&accion=+&repuestoId=<%=e.getElectronico().getId()%>&inventarioId=<%=e.getInventario().getId()%>">+</a>
-                                    <a href="editarCantidadInventario?tipo=electronico&accion=-&repuestoId=<%=e.getElectronico().getId()%>&inventarioId=<%=e.getInventario().getId()%>">-</a>
+                                    <a href="editarCantidadInventario?tipo=electronico&accion=sumar&repuestoId=<%=e.getElectronico().getId()%>&inventarioId=<%=e.getInventario().getId()%>">+</a>
+                                    <a href="editarCantidadInventario?tipo=electronico&accion=restar&repuestoId=<%=e.getElectronico().getId()%>&inventarioId=<%=e.getInventario().getId()%>">-</a>
                                 </div>
                             </div>
                         </div>

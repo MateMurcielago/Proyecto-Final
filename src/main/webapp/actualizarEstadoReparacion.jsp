@@ -58,7 +58,7 @@
                                 } else if(estado.equals("FINALIZADO")) {
                             %>
                                     <p>ENTREGADO</p>
-                                    input type="hidden" name="estadoNuevo" value="ENTREGADO">
+                                    <input type="hidden" name="estadoNuevo" value="ENTREGADO">
                             <%
                                 }
                             %>

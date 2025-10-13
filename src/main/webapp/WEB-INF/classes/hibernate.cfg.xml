@@ -41,5 +41,6 @@
         <mapping class="rdt.arrieta.casa.clases.intermedias.ReparacionElectronico"/>
         <mapping class="rdt.arrieta.casa.clases.intermedias.ReparacionPantalla"/>
         <mapping class="rdt.arrieta.casa.clases.intermedias.ReparacionLed"/>
+        <mapping class="rdt.arrieta.casa.clases.FallaComun"/>
     </session-factory>
 </hibernate-configuration>

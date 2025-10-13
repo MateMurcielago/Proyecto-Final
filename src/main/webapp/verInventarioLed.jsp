@@ -58,8 +58,8 @@
                                 </div>
 
                                 <div class="item-actions">
-                                    <a href="editarCantidadInventario?tipo=led&accion=+&repuestoId=<%=l.getLed().getId()%>&inventarioId=<%=l.getInventario().getId()%>">+</a>
-                                    <a href="editarCantidadInventario?tipo=led&accion=-&repuestoId=<%=l.getLed().getId()%>&inventarioId=<%=l.getInventario().getId()%>">-</a>
+                                    <a href="editarCantidadInventario?tipo=led&accion=sumar&repuestoId=<%=l.getLed().getId()%>&inventarioId=<%=l.getInventario().getId()%>">+</a>
+                                    <a href="editarCantidadInventario?tipo=led&accion=restar&repuestoId=<%=l.getLed().getId()%>&inventarioId=<%=l.getInventario().getId()%>">-</a>
                                 </div>
                             </div>
                         </div>

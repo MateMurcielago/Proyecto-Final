@@ -44,7 +44,7 @@
                 </div>
 
                 <div class="form-row">
-                    <input type="text" id="otro" name="otro" placeholder="Otro..." required>
+                    <input type="text" id="otro" name="otro" placeholder="Otro...">
                 </div>
 
                 <input type="hidden" name="clienteId" value="<%= request.getAttribute("clienteId") %>">

@@ -63,8 +63,8 @@
                                 </div>
 
                                 <div class="item-actions">
-                                    <a href="editarCantidadInventario?tipo=pantalla&accion=+&repuestoId=<%=p.getPantalla().getId()%>&inventarioId=<%=p.getInventario().getId()%>">+</a>
-                                    <a href="editarCantidadInventario?tipo=pantalla&accion=-&repuestoId=<%=p.getPantalla().getId()%>&inventarioId=<%=p.getInventario().getId()%>">-</a>
+                                    <a href="editarCantidadInventario?tipo=pantalla&accion=sumar&repuestoId=<%=p.getPantalla().getId()%>&inventarioId=<%=p.getInventario().getId()%>">+</a>
+                                    <a href="editarCantidadInventario?tipo=pantalla&accion=restar&repuestoId=<%=p.getPantalla().getId()%>&inventarioId=<%=p.getInventario().getId()%>">-</a>
                                 </div>
                             </div>
                         </div>

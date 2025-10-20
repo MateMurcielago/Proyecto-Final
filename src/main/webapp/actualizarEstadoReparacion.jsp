@@ -28,7 +28,7 @@
                 <input type="hidden" name="estado" value="<%=estado%>">
 
                 <%
-                    if(estado.equals("ENTREGADO") || estado.equals("NO REPARADO")) {
+                    if(estado.equals("RETIRADO") || estado.equals("NO REPARADO")) {
                 %>
                         <p>No se puede actualizar el estado</p>
                         <input type="hidden" namee="estadoNuevo" value="-">
@@ -57,8 +57,8 @@
                             <%
                                 } else if(estado.equals("FINALIZADO")) {
                             %>
-                                    <p>ENTREGADO</p>
-                                    <input type="hidden" name="estadoNuevo" value="ENTREGADO">
+                                    <p>RETIRADO</p>
+                                    <input type="hidden" name="estadoNuevo" value="RETIRADO">
                             <%
                                 }
                             %>

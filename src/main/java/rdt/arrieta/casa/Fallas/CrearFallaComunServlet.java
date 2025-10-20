@@ -15,7 +15,7 @@ import org.hibernate.Session;
 import org.hibernate.query.Query;
 
 @WebServlet("/crearFallaComun")
-public class crearFallaComunServlet extends HttpServlet {
+public class CrearFallaComunServlet extends HttpServlet {
     @Override
     protected  void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
@@ -68,6 +68,6 @@ public class crearFallaComunServlet extends HttpServlet {
         session.getTransaction().commit();
         session.close();
 
-        response.sendRedirect(request.getContextPath() + "/verFallaComun?id=" + f.getId());
+        response.sendRedirect(request.getContextPath() + "/verFallaComun?fallaId=" + f.getId());
     }
 }

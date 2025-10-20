@@ -14,7 +14,7 @@ import rdt.arrieta.casa.db.DBManager;
 import org.hibernate.Session;
 import org.hibernate.query.Query;
 
-@WebServlet("/crearFallaComun")
+@WebServlet("/crearFallaComunTipo")
 public class CrearFallaComunTipoServlet extends HttpServlet {
     @Override
     protected  void doGet(HttpServletRequest request, HttpServletResponse response)

@@ -39,6 +39,11 @@
                     <input type="number" name="cantidad" placeholder="Cantidad...">
                 </div>
 
+                <div class="form-row">
+                    <input class="form-check-input" type="checkbox" id="compra" name="compra" checked>
+                    <label class="form-check-label" for="compra">Compra</label>
+                </div>
+
                 <button type="submit"><%=ventana%></button>
             </form>
         </div>

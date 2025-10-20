@@ -11,6 +11,8 @@ import java.util.List;
 import rdt.arrieta.casa.clases.Reparacion;
 import rdt.arrieta.casa.clases.intermedias.ArticuloCliente;
 import rdt.arrieta.casa.clases.Cliente;
+import rdt.arrieta.casa.clases.ResumenMes;
+import rdt.arrieta.casa.clases.ResumenMesReparacion;
 import rdt.arrieta.casa.db.DBManager;
 import org.hibernate.Session;
 import org.hibernate.query.Query;
@@ -47,6 +49,21 @@ public class ActualizarEstadoReparacionRetiradoServlet extends HttpServlet {
 
         r.setEstado("RETIRADO");
         r.setFecha_fin(LocalDate.parse(fechaRetiroStr));
+
+        ResumenMes resumen = new ResumenMes();
+        resumen.setAnio(LocalDate.parse(fechaRetiroStr).getYear());
+        resumen.setMes(LocalDate.parse(fechaRetiroStr).getMonthValue());
+        resumen.setDescripcion(r.getArticuloCliente().getArticulo().getMarca().getTipo().getTipo() + " " +
+                r.getArticuloCliente().getArticulo().getMarca().getMarca() + " " +
+                r.getArticuloCliente().getArticulo().getModelo() + " de " +
+                r.getArticuloCliente().getCliente().getApellido() + " " +
+                r.getArticuloCliente().getCliente().getNombre());
+        resumen.setPrecio(r.getCosto());
+        session.persist(resumen);
+
+        ResumenMesReparacion resumenR = new ResumenMesReparacion();
+        resumenR.setDetalle(resumen);
+        session.persist(resumenR);
 
         session.getTransaction().commit();
         session.close();

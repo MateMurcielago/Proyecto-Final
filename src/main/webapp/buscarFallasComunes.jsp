@@ -51,7 +51,7 @@
                                 </div>
                             </div>
 
-                            <div class="item-body-2">
+                            <div class="item-body-3">
                                 <p><%=f.getResumen()%></p>
                             </div>
                         </div>
@@ -68,7 +68,7 @@
                 }
             %>
 
-            <a href="crearFallaComunTipo.jsp" class="btn-nuevo">Nueva Falla...</a>
+            <a href="crearFallaComunTipo" class="btn-nuevo">Nueva Falla...</a>
         </div>
     </body>
 </html>

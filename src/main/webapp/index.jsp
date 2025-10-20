@@ -19,6 +19,7 @@
             <a href="index.jsp">Inicio</a>
             <a href="opciones">Opciones</a>
             <a href="buscarFallasComunes">Fallas Comúnes</a>
+            <a href="seleccionarFechaResumen.jsp">Resúmen Mensual</a>
             <t>Ver...</t>
             <a href="buscarClientes">Clientes</a>
             <a href="buscarArticulos">Artículos</a>

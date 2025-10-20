@@ -237,3 +237,7 @@ item-list {
 .btn-container-3 button:hover {
     color: #0fd94f;
 }
+
+.item-body-3 {
+    display: flex;
+}

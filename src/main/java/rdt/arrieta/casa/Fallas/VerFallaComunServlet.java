@@ -34,5 +34,7 @@ public class VerFallaComunServlet extends HttpServlet {
 
         request.setAttribute("fallaId", fallaId);
         request.setAttribute("falla", falla);
+
+        request.getRequestDispatcher("verFallaComun.jsp").forward(request, response);
     }
 }

@@ -22,7 +22,7 @@
             <label for="label-text">Tipo: <%= request.getAttribute("tipo") %> </label>
             <label for="label-text">Marca: <%= request.getAttribute("marca") %></label>
 
-            <form action="agregarArticuloModelo" method="post">
+            <form action="crearFallaComun" method="post">
                 <div class="form-row">
                     <label for="label-text">Marca:</label>
                     <select name="modeloId" required>

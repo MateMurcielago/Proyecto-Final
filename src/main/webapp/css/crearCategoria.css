@@ -101,3 +101,15 @@ select option {
 select option:hover {
     background-color: var(--rojo-resaltado);
 }
+
+textarea {
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    width: 100%;
+    resize: vertical;
+    min-height: 80px;
+    box-sizing: border-box;
+    background-color: var(--negro-texto);
+    color: white;
+}

@@ -4,6 +4,7 @@ import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.*;
 import java.io.*;
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Properties;
@@ -15,6 +16,8 @@ import rdt.arrieta.casa.clases.embebidas.id_inventario_electronico;
 import rdt.arrieta.casa.clases.embebidas.id_inventario_pantalla;
 import rdt.arrieta.casa.clases.embebidas.id_inventario_led;
 import rdt.arrieta.casa.clases.intermedias.ArticuloCliente;
+import rdt.arrieta.casa.clases.ResumenMes;
+import rdt.arrieta.casa.clases.ResumenMesRepuesto;
 import rdt.arrieta.casa.db.DBManager;
 import org.hibernate.Session;
 import org.hibernate.query.Query;
@@ -51,6 +54,7 @@ public class EditarCantidadInventarioServlet extends HttpServlet {
         Long inventarioId = Long.parseLong(request.getParameter("inventarioId"));
         String accion = request.getParameter("accion");
         int cantidad = Integer.parseInt(request.getParameter("cantidad"));
+        String compra = request.getParameter("compra");
 
         String paginaAnterior = "";
 
@@ -72,6 +76,23 @@ public class EditarCantidadInventarioServlet extends HttpServlet {
                     }
                 }
 
+                if(compra != null) {
+                    ResumenMes resumen = new ResumenMes();
+                    resumen.setAnio(LocalDate.now().getYear());
+                    resumen.setMes(LocalDate.now().getMonthValue());
+                    String descripcion = e.getElectronico().getNombre().getTipo().getTipo() + " " +
+                            e.getElectronico().getNombre().getNombre() + " " +
+                            e.getElectronico().getCodigo();
+                    if(cantidad > 1) descripcion = descripcion + " (x" + cantidad + ")";
+                    resumen.setDescripcion(descripcion);
+                    resumen.setPrecio(e.getInventario().getPrecio() * cantidad);
+                    session.persist(resumen);
+
+                    ResumenMesRepuesto resumenE = new ResumenMesRepuesto();
+                    resumenE.setDetalle(resumen);
+                    session.persist(resumenE);
+                }
+
                 paginaAnterior = "verInventarioElectronico";
                 break;
             case "pantalla":
@@ -88,6 +109,22 @@ public class EditarCantidadInventarioServlet extends HttpServlet {
                     }
                 }
 
+                if(compra != null) {
+                    ResumenMes resumen = new ResumenMes();
+                    resumen.setAnio(LocalDate.now().getYear());
+                    resumen.setMes(LocalDate.now().getMonthValue());
+                    String descripcion = "Pantalla " + p.getPantalla().getTipo().getTipo() + " de " +
+                            p.getPantalla().getTamanio().getTamanio() + " " + p.getPantalla().getCodigo();
+                    if(cantidad > 1) descripcion = descripcion + " (x" + cantidad + ")";
+                    resumen.setDescripcion(descripcion);
+                    resumen.setPrecio(p.getInventario().getPrecio() * cantidad);
+                    session.persist(resumen);
+
+                    ResumenMesRepuesto resumenP = new ResumenMesRepuesto();
+                    resumenP.setDetalle(resumen);
+                    session.persist(resumenP);
+                }
+
                 paginaAnterior = "verInventarioPantalla";
                 break;
             case "led":
@@ -102,6 +139,21 @@ public class EditarCantidadInventarioServlet extends HttpServlet {
                     } else {
                         l.getInventario().setCantidad(l.getInventario().getCantidad() - cantidad);
                     }
+                }
+
+                if(compra != null) {
+                    ResumenMes resumen = new ResumenMes();
+                    resumen.setAnio(LocalDate.now().getYear());
+                    resumen.setMes(LocalDate.now().getMonthValue());
+                    String descripcion = "LED " + l.getLed().getTamanio();
+                    if(cantidad > 1) descripcion = descripcion + " (x" + cantidad + ")";
+                    resumen.setDescripcion(descripcion);
+                    resumen.setPrecio(l.getInventario().getPrecio() * cantidad);
+                    session.persist(resumen);
+
+                    ResumenMesRepuesto resumenL = new ResumenMesRepuesto();
+                    resumenL.setDetalle(resumen);
+                    session.persist(resumenL);
                 }
 
                 paginaAnterior = "verInventarioLed";

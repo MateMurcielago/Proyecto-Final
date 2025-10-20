@@ -50,7 +50,7 @@ public class ActualizarEstadoReparacionServlet extends HttpServlet {
         String estado = request.getParameter("estado");
         String estadoNuevo = request.getParameter("estadoNuevo");
 
-        if(estado.equals("ENTREGADO") || estado.equals("NO REPARADO")) {
+        if(estado.equals("RETIRADO") || estado.equals("NO REPARADO")) {
             response.sendRedirect("verReparacion?clienteId=" + clienteId + "&articuloId=" + articuloId +
                     "&reparacionId=" + reparacionId);
         } else {
@@ -70,8 +70,8 @@ public class ActualizarEstadoReparacionServlet extends HttpServlet {
             } else if(estadoNuevo.equals("FINALIZADO")) {
                 response.sendRedirect("actualizarEstadoReparacionFinalizado?clienteId=" + clienteId
                         + "&articuloId=" + articuloId + "&reparacionId=" + reparacionId);
-            } else if(estadoNuevo.equals("ENTREGADO")) {
-                response.sendRedirect("actualizarEstadoReparacionEntregado?clienteId=" + clienteId
+            } else if(estadoNuevo.equals("RETIRADO")) {
+                response.sendRedirect("actualizarEstadoReparacionRetirado?clienteId=" + clienteId
                         + "&articuloId=" + articuloId + "&reparacionId=" + reparacionId);
             } else if(estadoNuevo.equals("NO REPARADO")) {
                 Session session = DBManager.getSessionFactory().openSession();
